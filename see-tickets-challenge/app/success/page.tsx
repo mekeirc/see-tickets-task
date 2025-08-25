@@ -26,21 +26,30 @@ export default function SuccessPage() {
 	return (
 		<div className="w-full mx-auto bg-gray-100 h-screen ">
 			<Nav />
-            <div className="p-4">
-                <h1 className="text-2xl font-bold text-green-600">Thank you for your purchase!</h1>
-                <p className="mt-2">Summary of your order:</p>
-            </div>
+			<div className="p-4">
+				<h1 className="text-2xl font-bold text-green-600">Thank you for your purchase!</h1>
+				<p className="mt-2">Summary of your order:</p>
+			</div>
 			<div className="px-4">
 				{items.map((item) => (
-					<div key={item.id} className="flex gap-6 border border-gray-300 rounded-lg p-4 mb-4 items-center bg-white">
+					<div
+						key={item.id}
+						className="flex gap-6 border border-gray-300 rounded-lg p-4 mb-4 items-center bg-white"
+					>
 						<div className="image-container small flex align-center justify-center">
-                            <Image src={item.image} alt={item.title} width={120} height={120} className="object-contain" />
+							<Image
+								src={item.image}
+								alt={item.title}
+								width={120}
+								height={120}
+								className="object-contain"
+							/>
 						</div>
-                        <div>
+						<div>
 							<h2 className="font-semibold text-lg">{item.title}</h2>
 							<p className="text-gray-600 capitalize">{item.category}</p>
 							<p className="font-bold mt-2">
-								£{item.price} × {item.quantity}
+								£{item.price} x {item.quantity}
 							</p>
 						</div>
 					</div>

@@ -152,7 +152,15 @@ export default function Page() {
 									</g>
 								</defs>
 								<g fill="none" fillRule="evenodd">
-									<circle className="spingrad" fill="url(#a)" cx="25" cy="25" r="25" x="0" y="0"></circle>
+									<circle
+										className="spingrad"
+										fill="url(#a)"
+										cx="25"
+										cy="25"
+										r="25"
+										x="0"
+										y="0"
+									></circle>
 									<circle fill="url(#b)" cx="25" cy="25" r="22" />
 									<circle fill="#fff" cx="25" cy="25" r="20" />
 								</g>

@@ -19,7 +19,9 @@ type Product = {
 
 export default async function ProductDescriptionPage({ params }: { params: { id: string } }) {
 	const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
-	if (!res.ok) { return notFound(); }
+	if (!res.ok) {
+		return notFound();
+	}
 	const product: Product = await res.json();
 
 	return (
@@ -27,7 +29,12 @@ export default async function ProductDescriptionPage({ params }: { params: { id:
 			<Nav />
 			<div className="px-6 w-full">
 				<Link href="/" className="inline-flex gap-1 mb-4 text-blue-500">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#139DF4" d="m6.921 12.5 5.792 5.792L12 19l-7-7 7-7 .713.708L6.921 11.5H19v1H6.921Z"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+						<path
+							fill="#139DF4"
+							d="m6.921 12.5 5.792 5.792L12 19l-7-7 7-7 .713.708L6.921 11.5H19v1H6.921Z"
+						/>
+					</svg>
 					Back
 				</Link>
 				<h1 className="text-xl font-bold mb-4">{product.title}</h1>
