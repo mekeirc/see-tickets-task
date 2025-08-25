@@ -69,3 +69,24 @@ body {
     -webkit-box-orient: vertical;
     max-height: 70px;
 }
+
+.loading-spinner {
+  .spinner-base { stop-color: #dfdfdf; }
+  .spinner-color { stop-color: var(--primary-brand-color); }
+}
+
+@keyframes spin {
+      0% {
+        transform: none;
+        will-change: transform;
+    }
+    100% {
+        transform: rotate(360deg);
+        will-change: transform;
+    }
+}
+
+.spingrad {
+  transform-origin: 50% 50%;
+  animation: spin 2s linear infinite;
+}
