@@ -10,7 +10,7 @@ export default async function Page() {
 		<div className="font-sans min-h-screen gap-16">
 			<main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
 				<Nav />
-				<div className="flex px-6 py-1 w-full">
+				<div className="flex px-6 py-1 w-full flex-wrap gap-4 justify-center align-center">
 					{posts.map((post) => (
 						<ProductCard
 							key={post.id}
