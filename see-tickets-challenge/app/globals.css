@@ -55,6 +55,11 @@ body {
   height: 200px;
   width: 200px;
 
+  &.small {
+    height: 100px;
+    width: 100px;
+  }
+
   img {
     height: auto;
     width: auto;
@@ -89,4 +94,9 @@ body {
 .spingrad {
   transform-origin: 50% 50%;
   animation: spin 2s linear infinite;
+}
+
+.cart-button {
+  width: 36px;
+  height: 36px;
 }
