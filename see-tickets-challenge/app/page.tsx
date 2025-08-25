@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Products from "./products";
 import Nav from "../ui/components/nav";
 
 export default function Home() {
