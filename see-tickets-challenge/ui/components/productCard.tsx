@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AddToBasketButton from "./addToBasketButton";
 
 export default function ProductCard({
 	category,
@@ -22,8 +23,7 @@ export default function ProductCard({
 	title: string;
 }) {
 	return (
-		<Link
-            href={`/description/${id}`} 
+		<div
 			className="max-w-sm rounded overflow-hidden shadow-md p-5 border border-gray-200 flex flex-col align-center items-baseline justify-between"
 			key={id}
 		>
@@ -39,6 +39,13 @@ export default function ProductCard({
 				{rating.rate} / 5 <small className="text-gray-500">({rating.count} ratings)</small>
 			</p>
 			<div className="rounded-full bg-gray-100 text-blue-600 inline-flex px-3 capitalize mt-3">{category}</div>
-		</Link>
+            <AddToBasketButton product={{ id, title, price, image, category, description, rating }} />
+            <Link
+                href={`/description/${id}`}
+                className="w-full border-1 border-blue-500 text-blue-500 hover:border-blue-600 hover:text-blue-600 text-center font-semibold px-6 py-2 rounded cursor-pointer"
+            >
+                View Product
+            </Link>
+        </div>
 	);
 }
