@@ -4,9 +4,11 @@ import Nav from "@/ui/components/nav";
 import { useCart } from "@/app/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CartPage() {
 	const { cart, updateQuantity, removeFromCart } = useCart();
+	const router = useRouter();
 
 	if (cart.length === 0) {
 		return (
@@ -21,6 +23,11 @@ export default function CartPage() {
 	}
 
 	const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+	const handleCheckout = () => {
+		sessionStorage.setItem("purchasedItems", JSON.stringify(cart));
+		router.push("/success");
+	};
 
 	return (
 		<div className="w-full mx-auto bg-gray-100 h-screen items-baseline">
@@ -109,6 +116,12 @@ export default function CartPage() {
 					</div>
 				))}
 				<div className="text-right font-bold text-2xl">Total: £{total.toFixed(2)}</div>
+				<button
+					onClick={handleCheckout}
+					className="mt-4 w-full w-lg-1 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded shadow"
+				>
+					Checkout
+				</button>
 			</div>
 		</div>
 	);
